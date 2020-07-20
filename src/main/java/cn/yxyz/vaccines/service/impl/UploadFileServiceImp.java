@@ -22,14 +22,18 @@ public class UploadFileServiceImp implements UploadFileService {
     @Override
     public String uploadFile(MultipartFile zipFile) {
         String url = null;
+        File file=null;
         try {
-            File file = MultipartFileToFile.multipartFileToFile(zipFile);
+            file = MultipartFileToFile.multipartFileToFile(zipFile);
             String fileName = UUID.randomUUID().toString().replaceAll("-", "");
             String originalFilename = zipFile.getOriginalFilename();
             String fileExtraName = Objects.requireNonNull(originalFilename).substring(originalFilename.lastIndexOf(".") + 1).toLowerCase();
             url = tencentUploadUtil.uploadFile("vaccines/" + fileName + "."+fileExtraName, file);
+            MultipartFileToFile.deleteTempFile(file);
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            MultipartFileToFile.deleteTempFile(file);
         }
         return url;
     }
