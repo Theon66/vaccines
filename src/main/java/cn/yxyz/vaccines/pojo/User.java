@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import javax.xml.crypto.Data;
+import java.sql.Date;
 
 @TableName("user")
 public class User {
@@ -14,7 +15,17 @@ public class User {
     private String password;//密码
     private String name;//姓名
     private String gender;//性别
-    private Data birthday;//出生日期
+
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    private String birthday;//出生日期
     private String numberid;//身份证号
     private String telephone;//手机号
     private String relation;//与本人关系
@@ -66,13 +77,7 @@ public class User {
         this.gender = gender;
     }
 
-    public Data getBirthday() {
-        return birthday;
-    }
 
-    public void setBirthday(Data birthday) {
-        this.birthday = birthday;
-    }
 
     public String getNumberid() {
         return numberid;

@@ -25,11 +25,28 @@ public class AppointRecordController {
         return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.addAppointRecord(addappointrecord));
 
     }
-    //根据身份证号获得预约记录
+    //根据身份证号查询预约记录
     @PostMapping("appointRecord/findAppointRecord")
     public ResponseEntity<List<AppointRecord>> findAppointRecord(@RequestParam String numberid) {
         return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.findAppointRecord(numberid));
 
     }
+    //显示所有预约记录
+    @PostMapping("appointRecord/findAllAppointRecord")
+    public ResponseEntity<List<AppointRecord>> findAllAppointRecord() {
+        return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.findAllAppointRecord());
 
+    }
+    //修改预约记录
+    @PostMapping("appointRecord/modifyAppointRecord")
+    public ResponseEntity<Integer> modifyAppointRecord(@RequestBody AppointRecord appointrecord) {
+        return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.modifyAppointRecord(appointrecord));
+
+    }
+  //删除预约记录
+   @PostMapping("appointRecord/deleteAppointRecord")
+   public ResponseEntity<Integer> deleteAppointRecord(@RequestParam String aid) {
+       return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.deleteAppointRecord(aid));
+
+   }
 }

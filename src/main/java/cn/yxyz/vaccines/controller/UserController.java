@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -26,8 +29,12 @@ public class UserController {
 
     //1、注册
     @PostMapping("user/register")
-    public ResponseEntity<Integer> registerUser(@RequestBody User user) {
+    public ResponseEntity<Integer> registerUser(@RequestBody User user) throws ParseException {
         Integer a = 0;
+        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+        Date date=format.parse(user.getBirthday());
+        java.sql.Date date1=new java.sql.Date(date.getTime());
+        user.setBirthday(date1.toString());
         String s = stringRedisTemplate.opsForValue().get(user.getTelephone());
         if (user.getCode().equals(s)) {
             return ResponseEntity.status(HttpStatus.OK).body(userService.registerUser(user));
@@ -70,7 +77,11 @@ public class UserController {
     public ResponseEntity<List<User>> getUserInfo(@RequestParam String telephone) {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getUserInfo(telephone));
     }
-
+    //添加用户
+    @PostMapping("user/addUser")
+    public ResponseEntity<Integer> addUser(@RequestBody User user) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.addUser(user));
+    }
     //修改个人中心
     @PostMapping("user/modifyUserInfo")
     public ResponseEntity<Integer> modifyUserInfo(@RequestBody User user) {

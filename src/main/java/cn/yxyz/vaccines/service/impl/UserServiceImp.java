@@ -110,4 +110,14 @@ public class UserServiceImp implements UserService {
         wrapper.eq("uid", uid);
         return userMapper.delete(wrapper);
     }
+    @Override
+    public int addUser(User user){
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("telephone", user.getTelephone());
+        User tempUser = userMapper.selectOne(wrapper);
+        if (tempUser != null)
+            return 0;
+        // user.setPassword(bCryptPasswordEncoder.encode(user.getPassword());
+        return userMapper.insert(user);
+    }
 }
