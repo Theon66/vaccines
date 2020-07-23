@@ -63,13 +63,6 @@ public class InoculationRecord {
         this.vaccinationsite = vaccinationsite;
     }
 
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
 
     public String getPlace() {
         return place;
@@ -104,7 +97,7 @@ public class InoculationRecord {
     }
 
     private String vaccinationsite;//接种部位
-    private Date time;//预约时间
+    private String time;//预约时间
     private String place;//预约地点
     private String doctor;//预约医生
     private String department;//预约医生的科室

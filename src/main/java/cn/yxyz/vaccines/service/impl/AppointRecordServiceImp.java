@@ -4,10 +4,12 @@ import cn.yxyz.vaccines.mapper.AppointRecordMapper;
 
 import cn.yxyz.vaccines.pojo.AppointRecord;
 
+import cn.yxyz.vaccines.pojo.User;
 import cn.yxyz.vaccines.service.AppointRecordService;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -34,5 +36,22 @@ public class AppointRecordServiceImp implements AppointRecordService {
         QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
         wrapper.eq("numberid",numberid);
         return appointrecordMapper.selectList(wrapper);
+    }
+    @Override
+    public  List<AppointRecord> findAllAppointRecord(){
+        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        return appointrecordMapper.selectList(wrapper);
+    }
+    @Override
+    public int modifyAppointRecord(AppointRecord appointrecord){
+        return appointrecordMapper.updateById(appointrecord);
+    }
+    @Override
+    public int deleteAppointRecord(String aid){
+        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        wrapper.eq("aid",aid);
+        return appointrecordMapper.delete(wrapper);
+
+
     }
 }
