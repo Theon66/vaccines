@@ -35,20 +35,4 @@ public class AppointRecordServiceImp implements AppointRecordService {
         wrapper.eq("numberid",numberid);
         return appointrecordMapper.selectList(wrapper);
     }
-    @Override
-    public  List<AppointRecord> findAllAppointRecord(){
-        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
-        System.out.print(appointrecordMapper.selectList(wrapper));
-        return appointrecordMapper.selectList(wrapper);
-    }
-    @Override
-    public int modifyAppointRecord(AppointRecord appointrecord){
-        return appointrecordMapper.updateById(appointrecord);
-    }
-    @Override
-    public int deleteAppointRecord(String aid){
-        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
-        wrapper.eq("aid",aid);
-        return appointrecordMapper.delete(wrapper);
-    }
 }
