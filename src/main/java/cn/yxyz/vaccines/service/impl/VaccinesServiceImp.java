@@ -42,4 +42,11 @@ public class VaccinesServiceImp implements VaccinesService {
         wrapper.eq("vid",vid);
         return vaccinesMapper.delete(wrapper);
     }
+    @Override
+    public Vaccines findVaccinesByVid(int vid){
+        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
+        wrapper.eq("vid",vid);
+
+       return  vaccinesMapper.selectOne(wrapper);
+    }
 }

@@ -34,3 +34,6 @@ tencent:
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   typeAliasesPackage: cn.yxyz.vaccines.pojo
+
+
+

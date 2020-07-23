@@ -38,6 +38,7 @@ public class AppointRecordServiceImp implements AppointRecordService {
     @Override
     public  List<AppointRecord> findAllAppointRecord(){
         QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        System.out.print(appointrecordMapper.selectList(wrapper));
         return appointrecordMapper.selectList(wrapper);
     }
     @Override

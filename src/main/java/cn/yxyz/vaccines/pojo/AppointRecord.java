@@ -12,6 +12,22 @@ public class AppointRecord {
     private int aid;//预约记录ID
     private String name;//接种者姓名
 
+    private String vname;//预约疫苗名称
+    private String vaccinationsite;//接种部位
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    private String time;//预约时间
+    private String place;//预约地点
+    private String doctor;//预约医生
+    private String department;//预约医生的科室
+    private String job;//预约医生的职务
     public int getAid() {
         return aid;
     }
@@ -60,13 +76,6 @@ public class AppointRecord {
         this.vaccinationsite = vaccinationsite;
     }
 
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
 
     public String getPlace() {
         return place;
@@ -103,22 +112,9 @@ public class AppointRecord {
     private String numberid;//接种者身份证号
     private String telephone;//家长电话
 
-    public int getVid() {
-        return vid;
-    }
 
-    public void setVid(int vid) {
-        this.vid = vid;
-    }
 
-    private int vid;//预约疫苗id
-    private String vname;//预约疫苗名称
-    private String vaccinationsite;//接种部位
-    private Date time;//预约时间
-    private String place;//预约地点
-    private String doctor;//预约医生
-    private String department;//预约医生的科室
-    private String job;//预约医生的职务
+
 
 
 

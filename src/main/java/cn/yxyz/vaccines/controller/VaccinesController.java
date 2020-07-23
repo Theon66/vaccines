@@ -41,4 +41,10 @@ public class VaccinesController {
     public ResponseEntity<Integer> deleteVaccines(@RequestParam int vid) {
         return ResponseEntity.status(HttpStatus.OK).body(vaccinesService.deleteVaccines(vid));
     }
+    //根据vid获得疫苗详情信息
+    @PostMapping("vaccines/findVaccinesByVid")
+    public ResponseEntity<Vaccines> findVaccinesByVid(int vid) {
+        return ResponseEntity.status(HttpStatus.OK).body(vaccinesService.findVaccinesByVid(vid));
+
+    }
 }

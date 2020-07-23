@@ -14,4 +14,5 @@ public interface VaccinesService {
     int modifyVaccines(Vaccines vaccines);
 
     int deleteVaccines(int vid);
+    Vaccines findVaccinesByVid(int vid);
 }
