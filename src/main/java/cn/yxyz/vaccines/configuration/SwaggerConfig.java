@@ -11,17 +11,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * Swaager API文档配置
  */
-//@Configuration
-//@EnableSwagger2
-//class Swagger2 {
-//
-// @Bean
-// public Docket createRestApi() {
-//  return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("cn.saytime.web")).paths(PathSelectors.any())
-//          .build();
-// }
-//
-// private ApiInfo apiInfo() {
-//  return new ApiInfoBuilder().title("springboot利用swagger构建api文档").description("简单优雅的restfun风格，http://www.1314sl.com").termsOfServiceUrl("http://www.1314sl.com").version("1.0").build();
-// }
-//}
+@Configuration
+@EnableSwagger2
+class Swagger2 {
+
+ @Bean
+ public Docket createRestApi() {
+  return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("cn.yxyz.vaccines")).paths(PathSelectors.any())
+          .build();
+ }
+
+ private ApiInfo apiInfo() {
+  return new ApiInfoBuilder().title("预防接种疫苗api文档").description("描述").termsOfServiceUrl("。。。。").version("1.0").build();
+ }
+}

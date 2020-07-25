@@ -97,6 +97,15 @@ public class InoculationRecord {
     }
 
     private String vaccinationsite;//接种部位
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     private String time;//预约时间
     private String place;//预约地点
     private String doctor;//预约医生

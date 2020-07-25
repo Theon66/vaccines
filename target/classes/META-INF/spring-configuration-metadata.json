@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "tencent",
+      "type": "cn.yxyz.vaccines.utils.TencentUploadUtil",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tencent.allow-prefix",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    },
+    {
+      "name": "tencent.base-url",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    },
+    {
+      "name": "tencent.bucket",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    },
+    {
+      "name": "tencent.duration-seconds",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    },
+    {
+      "name": "tencent.region",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    },
+    {
+      "name": "tencent.secret-id",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    },
+    {
+      "name": "tencent.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "cn.yxyz.vaccines.utils.TencentUploadUtil"
+    }
+  ],
+  "hints": []
+}

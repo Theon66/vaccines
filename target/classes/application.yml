@@ -1,0 +1,39 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://cdb-i9qn2e80.bj.tencentcdb.com:10251/vaccines?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Lv@445357
+  redis:
+    database: 1
+    password:
+    host: 152.136.232.95
+    jedis:
+      pool:
+        max-active: 1
+        min-idle: 1
+        max-idle: 1
+tencent:
+  # 这些配置在腾讯云控制台都可查到（使用时替换为你自己的）
+  # 腾讯云的SecretId（永久的，可在控制台开启或关闭）
+  SecretId: AKID5ykG2XJ8etrYzUcfYA7vxiCPPDsLnlsm
+  # 腾讯云的SecretKey（永久的，可在控制台开启或关闭）
+  SecretKey: i9LZHkpiKehYhY9Wc2dS0GEvMWRUGn45
+  # 腾讯云的bucket (存储桶)
+  bucket: sm-1302056139
+  # 腾讯云的region(bucket所在地区)
+  region: ap-beijing
+  # 腾讯云的allowPrefix(允许上传的路径)
+  allowPrefix: /*
+  # 腾讯云的临时密钥时长(单位秒)
+  durationSeconds: 1800
+  # 腾讯云的访问基础链接:
+  baseUrl: https://sm-1302056139.cos.ap-beijing.myqcloud.com/
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: cn.yxyz.vaccines.pojo
+
+
+
