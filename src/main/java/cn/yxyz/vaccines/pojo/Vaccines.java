@@ -3,6 +3,7 @@ package cn.yxyz.vaccines.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
@@ -12,6 +13,7 @@ public class Vaccines {
     private int vid;//疫苗ID
     private String vname;//疫苗名称
     private String vclass;//疫苗种类
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date vaccinationtime;//可接种时间
     private String dosetimes;//剂次
     private String doseform;//剂型
@@ -99,34 +101,48 @@ public class Vaccines {
         this.video = video;
     }
 
-    public String getConfirmationitem() {
-        return confirmationitem;
-    }
 
-    public void setConfirmationitem(String confirmationitem) {
-        this.confirmationitem = confirmationitem;
-    }
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public String getLetter() {
-        return letter;
-    }
-
-    public void setLetter(String letter) {
-        this.letter = letter;
-    }
 
     private String video;//电子知情书介绍视频
-    private String confirmationitem;//确认项
-    private int state;//课程学习状态
-    private String letter;//电子知情书文档
+    private String effect;
+
+    public String getEffect() {
+        return effect;
+    }
+
+    public void setEffect(String effect) {
+        this.effect = effect;
+    }
+
+    public String getTaboo() {
+        return taboo;
+    }
+
+    public void setTaboo(String taboo) {
+        this.taboo = taboo;
+    }
+    private String image;
+
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    private String taboo;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    private String age;
 
 
 

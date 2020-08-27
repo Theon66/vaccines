@@ -49,4 +49,24 @@ public class VaccinesServiceImp implements VaccinesService {
 
        return  vaccinesMapper.selectOne(wrapper);
     }
+    @Override
+    public Vaccines findVaccinesByVname(String vname){
+        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
+        wrapper.eq("vname",vname);
+
+        return  vaccinesMapper.selectOne(wrapper);
+    }
+    @Override
+    public List<Vaccines> findVaccinesByVclass(String vclass){
+        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
+        wrapper.eq("vclass",vclass);
+        return  vaccinesMapper.selectList(wrapper);
+    }
+    @Override
+    public  List<Vaccines> findVaccinesByVage(String age){
+        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
+        wrapper.eq("age",age);
+        return  vaccinesMapper.selectList(wrapper);
+    }
+
 }

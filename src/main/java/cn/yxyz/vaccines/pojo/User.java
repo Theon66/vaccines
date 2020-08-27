@@ -9,7 +9,7 @@ import java.sql.Date;
 
 @TableName("user")
 public class User {
-
+    @TableId(type = IdType.AUTO)
     private int uid;//用户ID
     private String username;//用户名
     private String password;//密码
@@ -37,15 +37,8 @@ public class User {
 
     private String code;//验证码
 
-    public String getOpenid() {
-        return openid;
-    }
 
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-    @TableId
-    private String openid;//用户唯一标识
+
     public int getUid() {
         return uid;
     }

@@ -10,4 +10,13 @@ public interface AppointRecordService {
     List<AppointRecord> findAppointRecord(String numberid);
     List<AppointRecord> findAllAppointRecord();
     int deleteAppointRecord(String aid);
+    AppointRecord findAppointRecordByaid(String aid);
+    List<AppointRecord> findAppointRecordByTel(String telephone);
+    int updateLetterFirst(int aid,String letterfirst);
+    int updateLetterSecond(int aid,String letterfirst);
+    int updateLetterThird(int aid,String letterfirst);
+    int doctorConfirm(int aid);
+    int doctorAutograph(int aid,String doctorautograph);
+    int userAutograph(int aid,String userautograph);
+
 }

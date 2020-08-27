@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: cn.yxyz.vaccines.UploadFileTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.345 s - in cn.yxyz.vaccines.UploadFileTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.87 s - in cn.yxyz.vaccines.UploadFileTest

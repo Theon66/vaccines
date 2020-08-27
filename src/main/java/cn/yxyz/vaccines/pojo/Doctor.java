@@ -99,4 +99,14 @@ public class Doctor {
     private String department;//部门
     private String job;//职务
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    private String code;//验证码
+
 }

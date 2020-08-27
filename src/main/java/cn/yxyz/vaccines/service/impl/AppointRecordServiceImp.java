@@ -39,8 +39,12 @@ public class AppointRecordServiceImp implements AppointRecordService {
     }
     @Override
     public  List<AppointRecord> findAllAppointRecord(){
-        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
-        return appointrecordMapper.selectList(wrapper);
+//有接种记录按时间排序
+   //  QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        List<AppointRecord> appointRecordNoNull= appointrecordMapper.findAllAppointRecord();
+        List<AppointRecord> appointRecordNull= appointrecordMapper.findAllAppointRecordNull();
+        appointRecordNoNull.addAll(appointRecordNull);
+        return appointRecordNoNull;
     }
     @Override
     public int modifyAppointRecord(AppointRecord appointrecord){
@@ -54,4 +58,41 @@ public class AppointRecordServiceImp implements AppointRecordService {
 
 
     }
+    @Override
+    public AppointRecord findAppointRecordByaid(String aid){
+        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        wrapper.eq("aid",aid);
+        return appointrecordMapper.selectOne(wrapper);
+    }
+    @Override
+    public  List<AppointRecord> findAppointRecordByTel(String telephone){
+        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        wrapper.eq("telephone",telephone);
+        return appointrecordMapper.selectList(wrapper);
+    }
+    @Override
+    public int updateLetterFirst(int aid,String letterfirst){
+        return appointrecordMapper.updateLetterFirst(aid,letterfirst);
+    }
+    @Override
+    public int updateLetterSecond(int aid,String lettersecond){
+        return appointrecordMapper.updateLetterSecond(aid,lettersecond);
+    }
+    @Override
+    public int updateLetterThird(int aid,String letterthird){
+        return appointrecordMapper.updateLetterThird(aid,letterthird);
+    }
+    @Override
+    public int doctorConfirm(int aid){
+        return appointrecordMapper.doctorConfirm(aid);
+    }
+    @Override
+    public int doctorAutograph(int aid,String doctorautograph){
+        return appointrecordMapper.doctorAutograph(aid,doctorautograph);
+    }
+    @Override
+    public int userAutograph(int aid,String userautograph){
+        return appointrecordMapper.userAutograph(aid,userautograph);
+    }
+
 }

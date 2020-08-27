@@ -6,8 +6,10 @@ spring:
     url: jdbc:mysql://cdb-i9qn2e80.bj.tencentcdb.com:10251/vaccines?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: Lv@445357
+
   redis:
     database: 1
+    timeout : 5000
     password:
     host: 152.136.232.95
     jedis:
