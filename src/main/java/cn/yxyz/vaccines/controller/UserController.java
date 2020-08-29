@@ -87,9 +87,12 @@ public class UserController {
     })
     //2、登陆
     @PostMapping("user/login")
-    public ResponseEntity<Integer> loginUser(@RequestParam String telephone, @RequestParam String password) {
+    public ResponseEntity<User> loginUser(@RequestParam String telephone, @RequestParam String password) {
         return ResponseEntity.status(HttpStatus.OK).body(userService.loginUser(telephone, password));
     }
+
+
+
     @ApiOperation(value="修改密码", httpMethod = "Post",response =Integer.class,notes="修改密码")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "oldpassword", value = "旧密码", required = true, dataType = "String", paramType = "query"),
@@ -158,7 +161,14 @@ public class UserController {
     public ResponseEntity<List<User>> getUserInfo(@RequestParam String telephone) {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getUserInfo(telephone));
     }
-
+    @ApiOperation(value="根据身份证号获得用户详细信息", httpMethod = "Post",response =User.class,notes="根据身份证号获得用户详细信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "nubmerid", value = "身份证号", required = true, dataType = "String", paramType = "query")
+    })
+    @PostMapping("user/getUserInfoByNum")
+    public ResponseEntity<List<User>> getUserInfoByNum(@RequestParam String numberid) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUserInfoByNum(numberid));
+    }
     @ApiOperation(value="切换家长", httpMethod = "Post",response =User.class,notes="切换家长")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "numberid", value = "身份证号", required = true, dataType = "String", paramType = "query"),

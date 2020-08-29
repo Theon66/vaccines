@@ -33,4 +33,6 @@ public interface AppointRecordMapper extends BaseMapper<AppointRecord> {
     List<AppointRecord> findAllAppointRecord();
     @Select("select * from appointrecord where letterthird ='null'")
     List<AppointRecord> findAllAppointRecordNull();
+    @Select("select * from appointrecord where time between #{startTime} and #{endTime} order by time asc")
+    List<AppointRecord> selectAppointRecord( String startTime,String endTime);
 }

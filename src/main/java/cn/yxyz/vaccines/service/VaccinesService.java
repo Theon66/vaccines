@@ -15,8 +15,8 @@ public interface VaccinesService {
 
     int deleteVaccines(int vid);
     Vaccines findVaccinesByVid(int vid);
-    Vaccines findVaccinesByVname(String vname);
+    List<Vaccines> findVaccinesByVname(String vname);
     List<Vaccines> findVaccinesByVclass(String vclass);
     List<Vaccines> findVaccinesByVage(String age);
-
+    List<Vaccines> findVaccinesByVnameVclass(String vname,String vclass);
 }

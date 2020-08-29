@@ -25,7 +25,9 @@ cn\yxyz\vaccines\utils\MultipartFileToFile.class
 cn\yxyz\vaccines\service\AppointRecordService.class
 cn\yxyz\vaccines\configuration\CorsConfig.class
 cn\yxyz\vaccines\controller\AppointRecordController.class
+cn\yxyz\vaccines\controller\QrcodeController.class
 cn\yxyz\vaccines\mapper\HealthRecordMapper.class
+cn\yxyz\vaccines\utils\QRCodeUtil.class
 cn\yxyz\vaccines\pojo\HealthInquiry.class
 cn\yxyz\vaccines\service\HealthInquiryService.class
 cn\yxyz\vaccines\service\HealthRecordService.class
@@ -33,6 +35,7 @@ cn\yxyz\vaccines\utils\HttpClientUtil.class
 cn\yxyz\vaccines\VaccinesApplication.class
 cn\yxyz\vaccines\controller\UserController.class
 cn\yxyz\vaccines\service\impl\UploadFileServiceImp.class
+cn\yxyz\vaccines\utils\FileUtils.class
 cn\yxyz\vaccines\mapper\VaccinesMapper.class
 cn\yxyz\vaccines\controller\HealthInquiryController.class
 cn\yxyz\vaccines\pojo\HealthRecord.class

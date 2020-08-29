@@ -8,7 +8,7 @@ public interface UserService {
 
     int registerUser(User user);
 
-    int loginUser(String telephone, String password);
+    User loginUser(String telephone, String password);
 
     int modifyPassword(String oldpassword, String newpassword);
 
@@ -17,7 +17,7 @@ public interface UserService {
     int forgetPassword(String telephone, String code, String newpassword);
 
     List<User> getUserInfo(String telephone);
-
+    List<User> getUserInfoByNum(String numberid);
     int modifyUserInfo(User user);
 
 

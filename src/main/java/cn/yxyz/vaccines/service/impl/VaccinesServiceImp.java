@@ -23,12 +23,12 @@ public class VaccinesServiceImp implements VaccinesService {
     }
     @Override
     public int addVaccines(Vaccines vaccines){
-        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
-        wrapper.eq("vname",vaccines.getVname());
-        Vaccines tempvaccines=vaccinesMapper.selectOne(wrapper);
-        if(tempvaccines!=null){
-            return 0;
-        }
+//        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
+//        wrapper.eq("vname",vaccines.getVname());
+//        Vaccines tempvaccines=vaccinesMapper.selectOne(wrapper);
+//        if(tempvaccines!=null){
+//            return 0;
+//        }
         return vaccinesMapper.insert(vaccines);
     }
     @Override
@@ -50,12 +50,21 @@ public class VaccinesServiceImp implements VaccinesService {
        return  vaccinesMapper.selectOne(wrapper);
     }
     @Override
-    public Vaccines findVaccinesByVname(String vname){
+    public List<Vaccines> findVaccinesByVname(String vname){
         QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
         wrapper.eq("vname",vname);
 
-        return  vaccinesMapper.selectOne(wrapper);
+        return  vaccinesMapper.selectList(wrapper);
     }
+    @Override
+    public  List<Vaccines> findVaccinesByVnameVclass(String vname,String vclass){
+        QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();
+        wrapper.eq("vname",vname);
+        wrapper.eq("vclass",vclass);
+        return  vaccinesMapper.selectList(wrapper);
+    }
+
+
     @Override
     public List<Vaccines> findVaccinesByVclass(String vclass){
         QueryWrapper<Vaccines> wrapper =new QueryWrapper<>();

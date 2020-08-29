@@ -77,10 +77,23 @@ public class VaccinesController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "vname", value = "疫苗名称", required = true, dataType = "String", paramType = "query")
     })
-    //根据vid获得疫苗详情信息
+    //根据vname获得疫苗详情信息
     @PostMapping("vaccines/findVaccinesByVname")
-    public ResponseEntity<Vaccines> findVaccinesByVname(@RequestParam String vname) {
+    public ResponseEntity<List<Vaccines>> findVaccinesByVname(@RequestParam String vname) {
         return ResponseEntity.status(HttpStatus.OK).body(vaccinesService.findVaccinesByVname(vname));
+
+    }
+
+
+    @ApiOperation(value="根据vname和vclass获得疫苗详情信息", httpMethod = "POST",response =Vaccines.class,notes="根据vname和vclass获得疫苗详情信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "vname", value = "疫苗名称", required = true, dataType = "String", paramType = "query"),
+            @ApiImplicitParam(name = "vclass", value = "疫苗类别", required = true, dataType = "String", paramType = "query")
+    })
+    //根据vname和vclass获得疫苗详情信息
+    @PostMapping("vaccines/findVaccinesByVnameVclass")
+    public ResponseEntity<List<Vaccines>> findVaccinesByVnameVclass(@RequestParam String vname,@RequestParam String vclass) {
+        return ResponseEntity.status(HttpStatus.OK).body(vaccinesService.findVaccinesByVnameVclass(vname,vclass));
 
     }
 

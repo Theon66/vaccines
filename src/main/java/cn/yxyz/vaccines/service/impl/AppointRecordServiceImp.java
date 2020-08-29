@@ -94,5 +94,15 @@ public class AppointRecordServiceImp implements AppointRecordService {
     public int userAutograph(int aid,String userautograph){
         return appointrecordMapper.userAutograph(aid,userautograph);
     }
+    @Override
+    public List<AppointRecord> selectAppointRecord(String startTime,String endTime){
 
+        return appointrecordMapper.selectAppointRecord(startTime,endTime);
+    }
+    @Override
+    public List<AppointRecord> findAppointRecordByName(String name){
+        QueryWrapper<AppointRecord> wrapper=new QueryWrapper<>();
+        wrapper.eq("name",name);
+        return appointrecordMapper.selectList(wrapper);
+    }
 }

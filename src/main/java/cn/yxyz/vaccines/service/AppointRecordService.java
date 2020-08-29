@@ -18,5 +18,6 @@ public interface AppointRecordService {
     int doctorConfirm(int aid);
     int doctorAutograph(int aid,String doctorautograph);
     int userAutograph(int aid,String userautograph);
-
+    List<AppointRecord> selectAppointRecord(String startTime,String endTime);
+    List<AppointRecord> findAppointRecordByName(String name);
 }

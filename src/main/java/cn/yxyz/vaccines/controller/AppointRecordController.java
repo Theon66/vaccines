@@ -169,4 +169,26 @@ public class AppointRecordController {
 
     }
 
+
+
+    @ApiOperation(value="查询指定时间段的预约记录", httpMethod = "POST",response = Integer.class,notes="取消预约记录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "aid", value = "预约记录的ID", required = true, dataType = "String",paramType = "query")
+    })
+    //取消预约记录
+    @PostMapping("appointRecord/selectAppointRecord")
+    public ResponseEntity<List<AppointRecord>> selectAppointRecord(@RequestParam String startTime,@RequestParam String endTime) {
+        return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.selectAppointRecord(startTime,endTime));
+
+    }
+    @ApiOperation(value="根据name获得预约记录", httpMethod = "POST",response = Integer.class,notes="根据name获得预约记录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "name", value = "姓名", required = true, dataType = "String", paramType = "query")
+    })
+    //根据name获得预约记录
+    @PostMapping("appointRecord/findAppointRecordByName")
+    public ResponseEntity<List<AppointRecord>> findAppointRecordByName(@RequestParam String name) {
+        return ResponseEntity.status(HttpStatus.OK).body(appointrecordService.findAppointRecordByName(name));
+
+    }
 }

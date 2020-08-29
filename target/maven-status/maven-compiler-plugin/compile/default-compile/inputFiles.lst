@@ -2,10 +2,12 @@ D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\controller\UploadFileController.
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\service\impl\VaccinesServiceImp.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\controller\UserController.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\utils\TencentUploadUtil.java
+D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\utils\QRCodeUtil.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\controller\HealthRecordController.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\service\HealthInquiryService.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\service\HealthRecordService.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\service\UserService.java
+D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\controller\QrcodeController.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\pojo\HealthInquiry.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\service\impl\UserServiceImp.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\pojo\AppointRecord.java
@@ -14,6 +16,7 @@ D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\controller\AppointRecordControll
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\utils\HttpClientUtil.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\service\impl\HealthRecordServiceImp.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\pojo\HealthRecord.java
+D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\utils\FileUtils.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\mapper\AppointRecordMapper.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\controller\DoctorController.java
 D:\yxyz\vaccines\src\main\java\cn\yxyz\vaccines\configuration\SwaggerConfig.java

@@ -40,16 +40,19 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public int loginUser(String telephone, String password) {
+    public User loginUser(String telephone, String password) {
         QueryWrapper wrapper = new QueryWrapper<User>();
         wrapper.eq("telephone", telephone);
         wrapper.eq("password", password);
-        List<User> list = userMapper.selectList(wrapper);
-        System.out.print(list.size());
-        if (list.size() !=0 ) {
-            return 1;
-        }
-        return 0;
+       // User tempUser=null;
+        User tempUser= userMapper.selectOne(wrapper);
+      //  System.out.print(list.size());
+//        if (list.size() !=0 ) {
+//            return 1;
+//        }
+//System.out.print(tempUser);
+        //return 0;
+        return tempUser;
     }
 
     @Override
@@ -110,6 +113,12 @@ public class UserServiceImp implements UserService {
         return userMapper.selectList(wrapper);
     }
     @Override
+    public List<User> getUserInfoByNum(String numberid) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("numberid", numberid);
+        return userMapper.selectList(wrapper);
+    }
+    @Override
     public List<User> findAllUser() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         return userMapper.selectList(wrapper);
@@ -130,7 +139,7 @@ public class UserServiceImp implements UserService {
     @Override
     public int addUser(User user) {
         QueryWrapper wrapper = new QueryWrapper<User>();
-        wrapper.eq("telephone", user.getTelephone());
+        wrapper.eq("numberid", user.getNumberid());
         User tempUser = userMapper.selectOne(wrapper);
         if (tempUser != null)
             return 0;
